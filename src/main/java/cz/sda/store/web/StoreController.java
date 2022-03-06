@@ -17,11 +17,12 @@ public class StoreController {
 
     private final StoreGroupRepository groupRepository;
     private final StoreItemRepository storeItemRepository;
+    private final StoreItemMapper storeItemMapper;
 
 
     @GetMapping(URI_OVERVIEW)
-    public Iterable<StoreItem> getAllItems() {
-        return storeItemRepository.findAll();
+    public Iterable<StoreItemDto> getAllItems() {
+        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).toList();
     }
 
 

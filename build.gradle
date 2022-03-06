@@ -27,7 +27,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     //Test
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
     testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterApiVersion}"
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.2.0'
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jupiterApiVersion}"
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
