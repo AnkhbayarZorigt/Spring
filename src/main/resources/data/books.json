@@ -27,7 +27,10 @@
     "link": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
     "pages": 928,
     "title": "The Divine Comedy",
-    "year": 1315
+    "year": 1315,
+    "category": {
+      "id": 5
+    }
   },
   {
     "author": "Unknown",
@@ -37,7 +40,10 @@
     "link": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n",
     "pages": 160,
     "title": "The Epic Of Gilgamesh",
-    "year": -1700
+    "year": -1700,
+    "category": {
+      "id": 10
+    }
   },
   {
     "author": "Unknown",
@@ -47,7 +53,10 @@
     "link": "https://en.wikipedia.org/wiki/Book_of_Job\n",
     "pages": 176,
     "title": "The Book Of Job",
-    "year": -600
+    "year": -600,
+    "category": {
+      "id": 10
+    }
   },
   {
     "author": "Unknown",
@@ -157,7 +166,10 @@
     "link": "https://en.wikipedia.org/wiki/Journey_to_the_End_of_the_Night\n",
     "pages": 505,
     "title": "Journey to the End of the Night",
-    "year": 1932
+    "year": 1932,
+    "category": {
+      "id": 21
+    }
   },
   {
     "author": "Miguel de Cervantes",
@@ -167,7 +179,10 @@
     "link": "https://en.wikipedia.org/wiki/Don_Quixote\n",
     "pages": 1056,
     "title": "Don Quijote De La Mancha",
-    "year": 1610
+    "year": 1610,
+    "category": {
+      "id": 26
+    }
   },
   {
     "author": "Geoffrey Chaucer",
@@ -207,7 +222,10 @@
     "link": "https://en.wikipedia.org/wiki/Great_Expectations\n",
     "pages": 194,
     "title": "Great Expectations",
-    "year": 1861
+    "year": 1861,
+    "category": {
+      "id": 18
+    }
   },
   {
     "author": "Denis Diderot",
@@ -217,7 +235,10 @@
     "link": "https://en.wikipedia.org/wiki/Jacques_the_Fatalist\n",
     "pages": 596,
     "title": "Jacques the Fatalist",
-    "year": 1796
+    "year": 1796,
+    "category": {
+      "id": 20
+    }
   },
   {
     "author": "Alfred D\u00f6blin",
@@ -227,7 +248,10 @@
     "link": "https://en.wikipedia.org/wiki/Berlin_Alexanderplatz\n",
     "pages": 600,
     "title": "Berlin Alexanderplatz",
-    "year": 1929
+    "year": 1929,
+    "category": {
+      "id": 15
+    }
   },
   {
     "author": "Fyodor Dostoevsky",
@@ -237,7 +261,10 @@
     "link": "https://en.wikipedia.org/wiki/Crime_and_Punishment\n",
     "pages": 551,
     "title": "Crime and Punishment",
-    "year": 1866
+    "year": 1866,
+    "category": {
+      "id": 15
+    }
   },
   {
     "author": "Fyodor Dostoevsky",
@@ -247,7 +274,10 @@
     "link": "https://en.wikipedia.org/wiki/The_Idiot\n",
     "pages": 656,
     "title": "The Idiot",
-    "year": 1869
+    "year": 1869,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Fyodor Dostoevsky",
@@ -297,7 +327,10 @@
     "link": "https://en.wikipedia.org/wiki/Medea_(play)\n",
     "pages": 104,
     "title": "Medea",
-    "year": -431
+    "year": -431,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "William Faulkner",
@@ -337,7 +370,10 @@
     "link": "https://en.wikipedia.org/wiki/Sentimental_Education\n",
     "pages": 606,
     "title": "Sentimental Education",
-    "year": 1869
+    "year": 1869,
+    "category": {
+      "id": 7
+    }
   },
   {
     "author": "Federico Garc\u00eda Lorca",
@@ -357,7 +393,10 @@
     "link": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude\n",
     "pages": 417,
     "title": "One Hundred Years of Solitude",
-    "year": 1967
+    "year": 1967,
+    "category": {
+      "id": 26
+    }
   },
   {
     "author": "Gabriel Garc\u00eda M\u00e1rquez",
@@ -377,7 +416,10 @@
     "link": "https://en.wikipedia.org/wiki/Goethe%27s_Faust\n",
     "pages": 158,
     "title": "Faust",
-    "year": 1832
+    "year": 1832,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Nikolai Gogol",
@@ -437,7 +479,10 @@
     "link": "https://en.wikipedia.org/wiki/Iliad\n",
     "pages": 608,
     "title": "Iliad",
-    "year": -735
+    "year": -735,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Homer",
@@ -447,7 +492,10 @@
     "link": "https://en.wikipedia.org/wiki/Odyssey\n",
     "pages": 374,
     "title": "Odyssey",
-    "year": -800
+    "year": -800,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Henrik Ibsen",
@@ -537,7 +585,10 @@
     "link": "https://en.wikipedia.org/wiki/Sons_and_Lovers\n",
     "pages": 432,
     "title": "Sons and Lovers",
-    "year": 1913
+    "year": 1913,
+    "category": {
+      "id": 20
+    }
   },
   {
     "author": "Halld\u00f3r Laxness",
@@ -577,7 +628,10 @@
     "link": "https://en.wikipedia.org/wiki/Pippi_Longstocking\n",
     "pages": 160,
     "title": "Pippi Longstocking",
-    "year": 1945
+    "year": 1945,
+    "category": {
+      "id": 20
+    }
   },
   {
     "author": "Lu Xun",
@@ -627,7 +681,10 @@
     "link": "https://en.wikipedia.org/wiki/Moby-Dick\n",
     "pages": 378,
     "title": "Moby Dick",
-    "year": 1851
+    "year": 1851,
+    "category": {
+      "id": 26
+    }
   },
   {
     "author": "Michel de Montaigne",
@@ -647,7 +704,10 @@
     "link": "https://en.wikipedia.org/wiki/History_(novel)\n",
     "pages": 600,
     "title": "History",
-    "year": 1974
+    "year": 1974,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Toni Morrison",
@@ -687,7 +747,10 @@
     "link": "https://en.wikipedia.org/wiki/Lolita\n",
     "pages": 317,
     "title": "Lolita",
-    "year": 1955
+    "year": 1955,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "George Orwell",
@@ -817,7 +880,10 @@
     "link": "https://en.wikipedia.org/wiki/Hamlet\n",
     "pages": 432,
     "title": "Hamlet",
-    "year": 1603
+    "year": 1603,
+    "category": {
+      "id": 26
+    }
   },
   {
     "author": "William Shakespeare",
@@ -827,7 +893,10 @@
     "link": "https://en.wikipedia.org/wiki/King_Lear\n",
     "pages": 384,
     "title": "King Lear",
-    "year": 1608
+    "year": 1608,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "William Shakespeare",
@@ -837,7 +906,10 @@
     "link": "https://en.wikipedia.org/wiki/Othello\n",
     "pages": 314,
     "title": "Othello",
-    "year": 1609
+    "year": 1609,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Sophocles",
@@ -847,7 +919,10 @@
     "link": "https://en.wikipedia.org/wiki/Oedipus_the_King\n",
     "pages": 88,
     "title": "Oedipus the King",
-    "year": -430
+    "year": -430,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Stendhal",
@@ -957,7 +1032,10 @@
     "link": "https://en.wikipedia.org/wiki/Mahabharata\n",
     "pages": 276,
     "title": "Mahabharata",
-    "year": -700
+    "year": -700,
+    "category": {
+      "id": 12
+    }
   },
   {
     "author": "Walt Whitman",
