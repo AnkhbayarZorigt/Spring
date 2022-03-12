@@ -5,21 +5,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class StoreItem {
+public class Book {
 
     @Id
+    @GeneratedValue(generator = "increment")
     private Long id;
     private String name;
 
     @ManyToOne
-    private StoreGroup storeGroup;
+    private Category category;
 }

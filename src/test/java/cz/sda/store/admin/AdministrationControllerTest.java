@@ -1,16 +1,18 @@
 package cz.sda.store.admin;
 
-import cz.sda.store.web.StoreItemDto;
+import cz.sda.store.web.BookDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import java.util.List;
 
@@ -33,12 +35,12 @@ class AdministrationControllerTest {
 
     @BeforeEach
     void prepareForTest() {
-        List<StoreItemDto> resultList = List.of(storeItem(1L, "Item 1"), storeItem(2L, "Item 2"));
+        List<BookDto> resultList = List.of(storeItem(1L, "Item 1"), storeItem(2L, "Item 2"));
         when(administrationService.findAllItems()).thenReturn(resultList);
     }
 
-    private StoreItemDto storeItem(Long id, String name) {
-        return StoreItemDto.builder().id(id).name(name).build();
+    private BookDto storeItem(Long id, String name) {
+        return BookDto.builder().id(id).name(name).build();
     }
 
 
@@ -47,6 +49,8 @@ class AdministrationControllerTest {
     void loadPage() throws Exception {
         mockMvc.perform(get(AdministrationController.URI_OVERVIEW))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(2));
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(jsonPath("$.length()").value(2))
+                .andExpect(jsonPath("$[0].id").value(1));
     }
 }

@@ -1,10 +1,12 @@
 package cz.sda.store.web;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,17 +19,17 @@ public class StoreController {
 
     private final StoreGroupRepository groupRepository;
     private final StoreItemRepository storeItemRepository;
-    private final StoreItemMapper storeItemMapper;
+    private final BookMapper bookMapper;
 
 
     @GetMapping(URI_OVERVIEW)
-    public Iterable<StoreItemDto> getAllItems() {
-        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).collect(Collectors.toList());
+    public Iterable<BookDto> getAllItems() {
+        return storeItemRepository.findAll().stream()
+                .map(bookMapper::toDto).collect(Collectors.toList());
     }
 
-
     @GetMapping(URI_BY_GROUP)
-    public List<StoreItem> getByGroup(@PathVariable Long groupId) {
+    public List<Book> getByGroup(@PathVariable Long groupId) {
         return groupRepository.findById(groupId).get().getStoreGroupList();
     }
 }

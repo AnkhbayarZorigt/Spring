@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StoreItemDto {
+public class BookDto {
     private Long id;
     private String name;
+    private Long categoryId;
 }

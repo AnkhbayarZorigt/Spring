@@ -17,17 +17,17 @@ public class AdministrationController {
     private final AdministrationService service;
 
     @GetMapping(URI_OVERVIEW)
-    public List<StoreItemDto> getAllItems() {
+    public List<BookDto> getAllItems() {
         return service.findAllItems();
     }
 
     @PostMapping(GROUP_URI)
-    public Long addNewGroup(@RequestBody StoreGroup newGroup) {
+    public Long addNewGroup(@RequestBody Category newGroup) {
         return service.saveNewGroup(newGroup);
     }
 
     @PostMapping(ITEM_URI)
-    public Long addNewItem(@RequestBody StoreItemDto storeItem) {
+    public Long addNewItem(@RequestBody BookDto storeItem) {
         return service.saveNewItem(storeItem);
     }
 
