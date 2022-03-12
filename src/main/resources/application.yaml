@@ -1,7 +1,7 @@
 spring:
   profiles:
 #    remove if needed
-    #active: "docker"
+    active: "docker"
   datasource:
     url: jdbc:h2:mem:storeDb
     username: sa

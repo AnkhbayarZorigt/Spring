@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AdministrationService {
 
-    private final StoreGroupRepository groupRepository;
-    private final StoreItemRepository storeItemRepository;
+    private final CategoryRepository groupRepository;
+    private final BookRepository bookRepository;
     private final BookMapper bookMapper;
 
     public List<BookDto> findAllItems() {
         log.debug("Displaying all items in a shop");
-        return storeItemRepository.findAll().stream().map(bookMapper::toDto).collect(Collectors.toList());
+        return bookRepository.findAll().stream().map(bookMapper::toDto).collect(Collectors.toList());
     }
 
     @Transactional
@@ -30,9 +30,9 @@ public class AdministrationService {
     }
 
     public Long saveNewItem(BookDto bookDto) {
-        log.debug("Saving new item with a name [{}]", bookDto.getName());
+        log.debug("Saving new item with a name [{}]", bookDto.getTitle());
         var newStoreItem = bookMapper.fromDto(bookDto);
-        return storeItemRepository.save(newStoreItem).getId();
+        return bookRepository.save(newStoreItem).getId();
     }
 
     public void deleteGroup(Long id) {
@@ -42,6 +42,6 @@ public class AdministrationService {
 
     public void deleteItem(Long id) {
         log.debug("Removing item with id {}", id);
-        storeItemRepository.deleteById(id);
+        bookRepository.deleteById(id);
     }
 }
