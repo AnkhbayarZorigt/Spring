@@ -28,4 +28,8 @@ public class Cart {
     public void updatePrice() {
         totalSum = getSafelyCartItem().stream().mapToInt(CartItem::getPriceIncludingVat).reduce(Integer::sum).orElse(0);
     }
+
+    public void addItem(CartItem newItem) {
+        getSafelyCartItem().add(newItem);
+    }
 }
