@@ -17,17 +17,17 @@ public class StoreController {
 
     private final StoreGroupRepository groupRepository;
     private final StoreItemRepository storeItemRepository;
-    private final StoreItemMapper storeItemMapper;
+    private final BookMapper bookMapper;
 
 
     @GetMapping(URI_OVERVIEW)
-    public Iterable<StoreItemDto> getAllItems() {
-        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).collect(Collectors.toList());
+    public Iterable<BookDto> getAllItems() {
+        return storeItemRepository.findAll().stream().map(bookMapper::toDto).collect(Collectors.toList());
     }
 
 
     @GetMapping(URI_BY_GROUP)
-    public List<StoreItem> getByGroup(@PathVariable Long groupId) {
+    public List<Book> getByGroup(@PathVariable Long groupId) {
         return groupRepository.findById(groupId).get().getStoreGroupList();
     }
 }

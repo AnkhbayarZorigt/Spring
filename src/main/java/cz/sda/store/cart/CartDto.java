@@ -1,7 +1,7 @@
 package cz.sda.store.cart;
 
+import cz.sda.store.web.Book;
 import lombok.Data;
-import cz.sda.store.web.StoreItem;
 
 import java.util.List;
 
@@ -10,5 +10,5 @@ public class CartDto {
     private Integer totalSum;
     private Integer vat;
     private Integer sumIncludingVat;
-    private List<StoreItem> purchased;
+    private List<Book> purchased;
 }

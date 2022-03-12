@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,22 +16,22 @@ public class AdministrationService {
 
     private final StoreGroupRepository groupRepository;
     private final StoreItemRepository storeItemRepository;
-    private final StoreItemMapper storeItemMapper;
+    private final BookMapper bookMapper;
 
-    public List<StoreItemDto> findAllItems() {
+    public List<BookDto> findAllItems() {
         log.debug("Displaying all items in a shop");
-        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto)
-                .collect(Collectors.toList());
+        return storeItemRepository.findAll().stream().map(bookMapper::toDto).collect(Collectors.toList());
     }
 
-    public Long saveNewGroup(StoreGroup storeGroup) {
-        log.debug("Saving a new group with a name [{}]", storeGroup.getName());
-        return groupRepository.save(storeGroup).getId();
+    @Transactional
+    public Long saveNewGroup(Category category) {
+        log.debug("Saving a new group with a name [{}]", category.getName());
+        return groupRepository.save(category).getId();
     }
 
-    public Long saveNewItem(StoreItemDto storeItemDto) {
-        log.debug("Saving new item with a name [{}]", storeItemDto.getName());
-        var newStoreItem = storeItemMapper.fromDto(storeItemDto);
+    public Long saveNewItem(BookDto bookDto) {
+        log.debug("Saving new item with a name [{}]", bookDto.getName());
+        var newStoreItem = bookMapper.fromDto(bookDto);
         return storeItemRepository.save(newStoreItem).getId();
     }
 

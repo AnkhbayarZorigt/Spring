@@ -1,6 +1,6 @@
 package cz.sda.store.admin;
 
-import cz.sda.store.web.StoreItemDto;
+import cz.sda.store.web.BookDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,12 +33,12 @@ class AdministrationControllerTest {
 
     @BeforeEach
     void prepareForTest() {
-        List<StoreItemDto> resultList = List.of(storeItem(1L, "Item 1"), storeItem(2L, "Item 2"));
+        List<BookDto> resultList = List.of(storeItem(1L, "Item 1"), storeItem(2L, "Item 2"));
         when(administrationService.findAllItems()).thenReturn(resultList);
     }
 
-    private StoreItemDto storeItem(Long id, String name) {
-        return StoreItemDto.builder().id(id).name(name).build();
+    private BookDto storeItem(Long id, String name) {
+        return BookDto.builder().id(id).name(name).build();
     }
 
 
