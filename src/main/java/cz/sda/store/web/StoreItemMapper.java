@@ -6,8 +6,8 @@ import org.mapstruct.*;
 public interface StoreItemMapper {
 
     @BeanMapping(ignoreByDefault = true)
-    @Mapping(target = "id")
-    @Mapping(target = "name")
+//    @Mapping(target = "id")
+//    @Mapping(target = "name")
     StoreItemDto toDto(StoreItem entity);
 
     @BeanMapping(ignoreByDefault = true)

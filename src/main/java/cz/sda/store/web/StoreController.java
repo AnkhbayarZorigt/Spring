@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,7 +22,7 @@ public class StoreController {
 
     @GetMapping(URI_OVERVIEW)
     public Iterable<StoreItemDto> getAllItems() {
-        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).toList();
+        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).collect(Collectors.toList());
     }
 
 

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -18,7 +19,8 @@ public class AdministrationService {
 
     public List<StoreItemDto> findAllItems() {
         log.debug("Displaying all items in a shop");
-        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto).toList();
+        return storeItemRepository.findAll().stream().map(storeItemMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public Long saveNewGroup(StoreGroup storeGroup) {
