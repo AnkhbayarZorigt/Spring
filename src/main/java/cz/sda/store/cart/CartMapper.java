@@ -7,7 +7,7 @@ public interface CartMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id")
-    @Mapping(target = "name")
+    @Mapping(target = "totalSum")
     CartDto toDto(Cart entity);
 
     @BeanMapping(ignoreByDefault = true)

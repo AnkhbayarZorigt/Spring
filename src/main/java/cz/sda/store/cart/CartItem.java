@@ -25,6 +25,6 @@ public class CartItem {
 
     @PrePersist
     public void setVat() {
-        priceIncludingVat = Math.multiplyExact(price, 1 + vat);
+        priceIncludingVat = Math.multiplyExact(price, 1 + (vat/100));
     }
 }

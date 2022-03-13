@@ -13,15 +13,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CartController {
     private static final String URI = "/api/cart";
-    private static final String URI_ALL = URI + "/all";
-    private static final String URI_ADD = URI + "/add";
-    private static final String URI_REMOVE = URI + "/remove";
-    private static final String URI_REMOVE_ALL = URI + "/remove-all";
+    static final String URI_ALL = URI + "/all";
+    static final String URI_ADD = URI + "/add";
+    static final String URI_REMOVE = URI + "/remove";
+    static final String URI_REMOVE_ALL = URI + "/remove-all";
 
     private final CartService cartService;
 
     @GetMapping(URI_ALL)
-    public List<CartItem> getAll() {
+    public List<CartItemDto> getAll() {
         return cartService.findAll();
     }
 
@@ -37,8 +37,13 @@ public class CartController {
         return ResponseEntity.ok("Item removed");
     }
 
-    @PostMapping(URI_ADD + "/{cartId}")
-    public CartDto addItem(@PathVariable Long cartId, @RequestBody BookDto bookDto) {
+    @PutMapping(URI_ADD + "/{cartId}")
+    public CartDto addItemToExisting(@PathVariable Long cartId, @RequestBody BookDto bookDto) {
         return cartService.addItem(cartId, bookDto);
+    }
+
+    @PostMapping(URI_ADD )
+    public CartDto addItemTonew(@RequestBody BookDto bookDto) {
+        return cartService.addItem(bookDto);
     }
 }

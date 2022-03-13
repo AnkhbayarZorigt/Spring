@@ -10,7 +10,16 @@ public interface CartItemMapper {
 
 
     @Mapping(source = "title", target = "name")
-    @Mapping(target = "vat", constant = "0.15")
-    @Mapping(target = "price", defaultValue = "300")
+    @Mapping(target = "vat", constant = "15")
+    @Mapping(target = "price", constant = "300")
+    @Mapping(target = "priceIncludingVat", ignore = true)
+    //Add before persist
     CartItem fromBook(BookDto dto);
+
+    @Mapping(target = "id")
+    @Mapping(target = "name")
+    @Mapping(target = "vat")
+    @Mapping(target = "price")
+    @Mapping(target = "priceIncludingVat")
+    CartItemDto toDto(CartItem dto);
 }

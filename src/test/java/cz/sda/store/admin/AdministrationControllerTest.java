@@ -40,7 +40,7 @@ class AdministrationControllerTest {
     }
 
     private BookDto storeItem(Long id, String name) {
-        return BookDto.builder().id(id).name(name).build();
+        return BookDto.builder().id(id).title(name).build();
     }
 
 

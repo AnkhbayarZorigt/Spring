@@ -18,10 +18,10 @@ public class CartService {
     private final CartItemMapper cartItemMapper;
     private final CartMapper cartMapper;
 
-    public List<CartItem> findAll() {
-        List<CartItem> itemList = new ArrayList<>();
+    public List<CartItemDto> findAll() {
+        List<CartItemDto> itemList = new ArrayList<>();
         for (CartItem item : cartItemRepository.findAll()) {
-            itemList.add(item);
+            itemList.add(cartItemMapper.toDto(item));
         }
         return itemList;
     }
@@ -39,10 +39,23 @@ public class CartService {
 
     @Transactional
     public CartDto addItem(Long id, BookDto dto) {
-        var cart = cartRepository.findById(id).orElse(new Cart());
+        var cart = findCart(id);
+        return addItemToCart(cart, dto);
+    }
+
+    @Transactional
+    public CartDto addItem(BookDto dto) {
+        return addItemToCart(new Cart(), dto);
+    }
+
+    private CartDto addItemToCart(Cart cart, BookDto dto) {
         var cartItem = cartItemMapper.fromBook(dto);
         cart.addItem(cartItem);
         cartRepository.save(cart);
         return cartMapper.toDto(cart);
+    }
+
+    private Cart findCart(Long id) {
+        return cartRepository.findById(id).orElse(new Cart());
     }
 }
