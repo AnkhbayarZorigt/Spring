@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments/sources :: sources"></th:block>
+<body>
+
+<div class="container">
+    <div class="row col-md-12">
+        <h1 class="text-capitalize">Welcome to our store</h1>
+    </div>
+</div>
+<div class="modal-dialog" id="errorDialog" role="dialog">
+    <p id="errorMessage"></p>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+</body>
+</html>
