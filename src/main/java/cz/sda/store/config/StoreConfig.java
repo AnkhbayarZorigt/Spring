@@ -28,7 +28,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "cz.sda.store", entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager")
+@EnableJpaRepositories(basePackages = "cz.sda.store",
+        entityManagerFactoryRef = "myFactory",
+        transactionManagerRef = "transactionManager")
 @ComponentScan(basePackages = "cz.sda.store")
 @EnableWebMvc
 public class StoreConfig implements ApplicationContextAware, WebMvcConfigurer {
@@ -82,7 +84,7 @@ public class StoreConfig implements ApplicationContextAware, WebMvcConfigurer {
         return resolver;
     }
 
-    @Bean
+    @Bean(name = "myFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(StorePropertiesConfig propertiesConfig) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setPackagesToScan("cz.sda.store");
@@ -93,7 +95,7 @@ public class StoreConfig implements ApplicationContextAware, WebMvcConfigurer {
     }
 
     @Bean
-    public JpaTransactionManager transactionManager(@Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
+    public JpaTransactionManager transactionManager(@Qualifier("myFactory") EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
 

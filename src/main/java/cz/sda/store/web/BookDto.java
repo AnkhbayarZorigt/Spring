@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Builder
 @Data
 @AllArgsConstructor
@@ -20,4 +22,15 @@ public class BookDto {
     private Integer pages;
     private Integer year;
     private CategoryDto category;
+
+    @SuppressWarnings({"unused"}) //use in Thymeleaf
+    public String detectPeriod() {
+        if (year < 1000) {
+            return "Very old";
+        } else if (year < 2000) {
+            return "not so old";
+        } else {
+            return "quiet new";
+        }
+    }
 }

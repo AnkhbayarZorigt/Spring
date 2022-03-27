@@ -1,6 +1,7 @@
 package cz.sda.store.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.flywaydb.core.Flyway;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -22,7 +23,8 @@ public class StoreInit implements WebApplicationInitializer {
     private void createApplicationContext(final ServletContext servletContext) {
         var applicationContext = new AnnotationConfigWebApplicationContext();
         applicationContext.setServletContext(servletContext);
-        applicationContext.register(StoreConfig.class, StorePropertiesConfig.class);
+//        applicationContext.register(StoreConfig.class, StorePropertiesConfig.class, StoreOpenUi.class, StoreFlywayConfig.class);
+        applicationContext.register(StoreConfig.class);
 
         applicationContext.refresh();
         servletContext.addListener(new ContextLoaderListener(applicationContext));

@@ -3,12 +3,8 @@
 <div class="row" th:fragment="header">
     <div class="col-md-12 line-wrapper">
         <div class="tab-menu col-md-12">
-            <a th:id="tabMap" th:href="@{/map}" class="tab-link col-md-3" th:text="#{map_tab}"></a>
-<!--            User editation-->
-<!--            <a th:if="${session.user.isAdmin() || session.user.isSuperAdmin()}" th:href="@{/user}" th:id="tabUser"-->
-<!--                  class="tab-link col-md-3" th:text="#{user_tab}"></a>-->
-<!--            Oder creation-->
-<!--            <a th:href="@{/order}" th:id="tabUser" class="tab-link col-md-3" th:text="#{order}"></a>-->
+            <a th:id="tabMap" th:href="@{/home}" class="tab-link col-md-3" th:text="#{map_tab}"></a>
+            <a th:id="tabMap" th:href="@{/book}" class="tab-link col-md-3" th:text="#{map_tab}"></a>
             <a th:id="tabUser" th:href="@{/login/performLogout}" class="tab-link col-md-3"
                th:text="#{logout}"></a>
         </div>

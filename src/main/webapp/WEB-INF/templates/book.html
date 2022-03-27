@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<th:block th:replace="fragments/sources :: sources"></th:block>
-<link rel="stylesheet" th:href="@{/resources/css/map.css}" href="../../webapp/css/base.css"/>
-<script th:src="@{/resources/js/map.js}"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Book store</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/jquery-ui.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/jquery-ui.theme.css}"/>
+    <script type="text/javascript" th:src="@{js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/jquery-ui.min.js}"></script>
+</head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/home}" th:text="Homepage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/book}" th:text="Store">Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cart}" th:text="Your-cart">Cart</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row col-md-12">
+        <h2>Shp updated</h2>
+        <div class="container">
+            <div id=filter class="col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Title</span>
+                    </div>
+                    <input th:type="text" class="form-control" th:placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Language</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Language" aria-label="Language" aria-describedby="basic-addon2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div class="container">
+            <div id="book" th:each="book : ${bookList}">
+                <div th:if="${book.pages} > 600">
+                    <p th:text="${book.title}">Book title</p>
+                    <p th:text="${book.language}">Language</p>
+                    <p th:text="${book.pages}" th:classappend="${book.pages} > 1000 ? 'text-info' : 'text-dark'">Number of pages</p>
+                    <p th:text="${book.detectPeriod()}">Period</p>
+                </div>
 
-
-
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal-dialog" id="errorDialog" role="dialog">
     <p id="errorMessage"></p>
 </div>
